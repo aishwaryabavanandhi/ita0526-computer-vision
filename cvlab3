@@ -1,0 +1,23 @@
+import cv2
+
+# Read image
+img = cv2.imread("c:\\Users\\B Aishwarya\\Downloads\\labprac.jpg")
+
+# Check if image loaded
+if img is None:
+    print("Error: Image not found!")
+else:
+    # Convert to grayscale (required for Canny)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Apply Canny Edge Detection
+    edges = cv2.Canny(gray, 100, 200)
+
+    # Show original image
+    cv2.imshow("Original Image", img)
+
+    # Show edges
+    cv2.imshow("Canny Edge Detection", edges)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()

@@ -1,0 +1,21 @@
+import cv2
+
+# Read the image
+img = cv2.imread("c:\\Users\\B Aishwarya\\Downloads\\labprac.jpg")
+
+# Check if image loaded properly
+if img is None:
+    print("Error: Image not found!")
+else:
+    # Apply Gaussian Blur
+    blurred = cv2.GaussianBlur(img, (15, 15), 0)
+
+    # Show original image
+    cv2.imshow("Original Image", img)
+
+    # Show blurred image
+    cv2.imshow("Gaussian Blurred Image", blurred)
+
+    # Wait until key press
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
