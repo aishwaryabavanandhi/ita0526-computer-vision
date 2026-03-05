@@ -1,0 +1,25 @@
+import cv2
+# Read original image
+img = cv2.imread(r"C:\Users\B Aishwarya\Downloads\labprac.jpg")
+
+if img is None:
+    print("Error: Image not found!")
+else:
+    # Define watermark text
+    watermark_text = "WATERMARK"
+
+    # Set position for watermark
+    position = (50, 50)
+
+    # Insert watermark text
+    cv2.putText(img, watermark_text, position,
+                cv2.FONT_HERSHEY_SIMPLEX,
+                1,
+                (0, 0, 255),
+                2)
+
+    # Display image
+    cv2.imshow("Watermarked Image", img)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
